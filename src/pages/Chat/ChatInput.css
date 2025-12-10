@@ -1,0 +1,173 @@
+/* ====================================================================
+   L.U.N.A. Chat Input Styles - Deep Sea Glassmorphism
+   ==================================================================== */
+
+.chat-input-container {
+    position: relative;
+    padding: var(--spacing-md);
+}
+
+.input-glass {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 15, 30, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(100, 200, 255, 0.08);
+}
+
+.input-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+/* Toolbar */
+.input-toolbar {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.toolbar-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(100, 200, 255, 0.05);
+    border: 1px solid rgba(100, 200, 255, 0.1);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.toolbar-btn:hover {
+    background: rgba(100, 200, 255, 0.1);
+    color: var(--color-text-primary);
+    border-color: rgba(100, 200, 255, 0.2);
+}
+
+.toolbar-btn.active {
+    background: rgba(100, 200, 255, 0.15);
+    border-color: var(--color-bioluminescent);
+    color: var(--color-bioluminescent);
+}
+
+.toolbar-btn.danger:hover {
+    background: rgba(255, 107, 107, 0.1);
+    border-color: rgba(255, 107, 107, 0.3);
+    color: var(--color-error);
+}
+
+.toolbar-spacer {
+    flex: 1;
+}
+
+/* Input Wrapper */
+.input-wrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--spacing-sm);
+    background: rgba(0, 20, 40, 0.5);
+    border: 1px solid rgba(100, 200, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-sm);
+    transition: all var(--transition-fast);
+}
+
+.input-wrapper:focus-within {
+    border-color: rgba(100, 200, 255, 0.3);
+    box-shadow: 0 0 20px rgba(100, 200, 255, 0.1);
+}
+
+.chat-textarea {
+    flex: 1;
+    resize: none;
+    border: none;
+    background: transparent;
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+    max-height: 150px;
+    min-height: 24px;
+    color: var(--color-text-primary);
+}
+
+.chat-textarea:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.chat-textarea::placeholder {
+    color: var(--color-text-muted);
+}
+
+.chat-textarea:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Input Actions */
+.input-actions {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.send-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.send-btn.primary {
+    background: linear-gradient(135deg, var(--color-bioluminescent) 0%, var(--color-jellyfish-glow) 100%);
+    color: white;
+    border: none;
+}
+
+.send-btn.primary:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(100, 200, 255, 0.4);
+}
+
+.send-btn.stream {
+    background: rgba(100, 200, 255, 0.1);
+    border: 1px solid rgba(100, 200, 255, 0.2);
+    color: var(--color-bioluminescent);
+}
+
+.send-btn.stream:hover:not(:disabled) {
+    background: rgba(100, 200, 255, 0.2);
+    border-color: rgba(100, 200, 255, 0.4);
+}
+
+.send-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

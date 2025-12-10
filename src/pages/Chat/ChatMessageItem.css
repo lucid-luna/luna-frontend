@@ -1,0 +1,384 @@
+/* ====================================================================
+   L.U.N.A. Chat Message Item Styles - Deep Sea Glassmorphism
+   ==================================================================== */
+
+.message {
+    display: flex;
+    gap: var(--spacing-md);
+    animation: messageSlideIn 0.4s ease;
+}
+
+@keyframes messageSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.user {
+    flex-direction: row-reverse;
+}
+
+.message.system {
+    justify-content: center;
+}
+
+/* Avatar */
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+    background: rgba(100, 200, 255, 0.1);
+    border: 1px solid rgba(100, 200, 255, 0.15);
+    color: var(--color-text-secondary);
+}
+
+/* Luna profile avatar - no extra styling, Avatar component handles it */
+.message-avatar.profile-avatar {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.message.user .message-avatar.profile-avatar {
+    background: transparent;
+    border: none;
+}
+
+.message.user .message-avatar {
+    background: rgba(100, 200, 255, 0.15);
+    border-color: rgba(100, 200, 255, 0.3);
+    color: var(--color-bioluminescent);
+}
+
+.message.assistant .message-avatar:not(.luna-profile) {
+    background: linear-gradient(135deg, rgba(100, 200, 255, 0.2) 0%, rgba(123, 104, 238, 0.2) 100%);
+    border-color: rgba(100, 200, 255, 0.3);
+    color: var(--color-bioluminescent);
+}
+
+.message.system .message-avatar {
+    display: none;
+}
+
+/* Content Wrapper */
+.message-content-wrapper {
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.message.system .message-content-wrapper {
+    max-width: 100%;
+}
+
+.message.user .message-content-wrapper {
+    align-items: flex-end;
+}
+
+/* Header */
+.message-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-xs);
+}
+
+.message.user .message-header {
+    flex-direction: row-reverse;
+}
+
+.message-author {
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.message-time {
+    color: var(--color-text-muted);
+}
+
+/* Message Bubble - Glassmorphism */
+.message-bubble {
+    position: relative;
+    padding: var(--spacing-md);
+    background: rgba(0, 20, 40, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(100, 200, 255, 0.1);
+    border-radius: var(--radius-lg);
+    border-top-left-radius: var(--radius-sm);
+}
+
+.message.user .message-bubble {
+    background: rgba(100, 200, 255, 0.15);
+    border-color: rgba(100, 200, 255, 0.25);
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-sm);
+}
+
+.message.system .message-bubble {
+    background: rgba(255, 184, 100, 0.1);
+    border-color: rgba(255, 184, 100, 0.2);
+    border-radius: var(--radius-md);
+    text-align: center;
+    color: var(--color-warning);
+}
+
+.message-text {
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: var(--color-text-primary);
+}
+
+/* Meta Badges */
+.message-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid rgba(100, 200, 255, 0.1);
+}
+
+.meta-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    background: rgba(0, 20, 40, 0.5);
+    border: 1px solid rgba(100, 200, 255, 0.15);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+}
+
+.meta-badge.emotion {
+    border-width: 1px;
+}
+
+.meta-badge.cached {
+    background: rgba(76, 223, 176, 0.1);
+    border-color: rgba(76, 223, 176, 0.3);
+    color: var(--color-success);
+}
+
+.meta-label {
+    font-weight: 500;
+}
+
+/* Audio Button */
+.audio-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: rgba(100, 200, 255, 0.05);
+    border: 1px solid rgba(100, 200, 255, 0.15);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin-top: var(--spacing-xs);
+}
+
+.audio-button:hover {
+    background: rgba(100, 200, 255, 0.1);
+    border-color: rgba(100, 200, 255, 0.3);
+    color: var(--color-bioluminescent);
+}
+
+.audio-button.playing {
+    background: rgba(100, 200, 255, 0.15);
+    border-color: var(--color-bioluminescent);
+    color: var(--color-bioluminescent);
+}
+
+/* Message Actions */
+.message-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: var(--spacing-xs);
+    opacity: 0;
+    transform: translateY(4px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.message:hover .message-actions {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Deep Sea Glass Action Button */
+.glass-action-btn {
+    --btn-size: 32px;
+    --btn-glow: rgba(100, 200, 255, 0.4);
+    
+    position: relative;
+    width: var(--btn-size);
+    height: var(--btn-size);
+    border: 1px solid rgba(100, 200, 255, 0.15);
+    border-radius: 10px;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 25, 45, 0.9),
+        rgba(10, 18, 35, 0.95)
+    );
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Glow effect */
+.glass-action-btn .btn-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: radial-gradient(
+        circle at 50% 0%,
+        var(--btn-glow) 0%,
+        transparent 70%
+    );
+}
+
+/* Inner content */
+.glass-action-btn .btn-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.55);
+    transition: all 0.3s ease;
+}
+
+.glass-action-btn .btn-inner svg {
+    transition: all 0.3s ease;
+}
+
+/* Sparkle icon for regenerate */
+.glass-action-btn .sparkle-icon {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    opacity: 0;
+    transform: scale(0) rotate(-20deg);
+    transition: all 0.3s ease;
+    color: #fbbf24;
+}
+
+/* Hover State */
+.glass-action-btn:hover {
+    border-color: rgba(100, 200, 255, 0.3);
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.35),
+        0 0 20px var(--btn-glow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+.glass-action-btn:hover .btn-glow {
+    opacity: 1;
+}
+
+.glass-action-btn:hover .btn-inner {
+    color: var(--color-bioluminescent, #64c8ff);
+}
+
+.glass-action-btn:hover .btn-inner svg {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 6px currentColor);
+}
+
+/* Active State */
+.glass-action-btn:active {
+    transform: translateY(0) scale(0.95);
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Success State (Copied) */
+.glass-action-btn.success {
+    --btn-glow: rgba(76, 223, 176, 0.5);
+    border-color: rgba(76, 223, 176, 0.3);
+}
+
+.glass-action-btn.success .btn-inner {
+    color: #4cdfb0;
+}
+
+.glass-action-btn.success .btn-inner svg {
+    animation: checkBounce 0.4s ease;
+}
+
+@keyframes checkBounce {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+.glass-action-btn.success .btn-glow {
+    opacity: 1;
+}
+
+/* Regenerate Button */
+.glass-action-btn.regenerate {
+    --btn-glow: rgba(167, 139, 250, 0.5);
+}
+
+.glass-action-btn.regenerate:hover {
+    border-color: rgba(167, 139, 250, 0.3);
+}
+
+.glass-action-btn.regenerate:hover .btn-inner {
+    color: #a78bfa;
+}
+
+.glass-action-btn.regenerate:hover .sparkle-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.glass-action-btn.regenerate:hover .btn-inner svg:first-child {
+    animation: spinOnce 0.6s ease;
+}
+
+@keyframes spinOnce {
+    from { transform: rotate(0deg) scale(1.15); }
+    to { transform: rotate(360deg) scale(1.15); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .message-actions {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .glass-action-btn {
+        --btn-size: 30px;
+    }
+}

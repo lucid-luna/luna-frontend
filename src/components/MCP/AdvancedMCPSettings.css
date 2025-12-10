@@ -1,0 +1,464 @@
+/* ===== Advanced MCP Settings ===== */
+
+.advanced-mcp-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Experimental Warning */
+.experimental-warning {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 10px;
+}
+
+.experimental-warning svg {
+    flex-shrink: 0;
+    color: #f59e0b;
+    margin-top: 2px;
+}
+
+.experimental-warning strong {
+    display: block;
+    font-size: 13px;
+    color: #fbbf24;
+    margin-bottom: 4px;
+}
+
+.experimental-warning p {
+    margin: 0;
+    font-size: 12px;
+    color: rgba(251, 191, 36, 0.7);
+    line-height: 1.4;
+}
+
+/* Settings Section */
+.settings-section {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.section-header:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.section-header svg:first-child {
+    color: var(--color-text-muted);
+}
+
+.section-header svg:nth-child(2) {
+    color: var(--color-primary, #6366f1);
+}
+
+.section-header span {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.section-content {
+    padding: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.section-desc {
+    margin: 0 0 16px 0;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+/* Setting Row */
+.setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.setting-row:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.setting-row label {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+
+.input-with-unit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-with-unit input {
+    width: 80px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: var(--color-text-primary);
+    font-size: 13px;
+    text-align: right;
+}
+
+.input-with-unit input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.input-with-unit span {
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+/* Server List (Auto Start) */
+.server-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.empty-state {
+    padding: 20px;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 12px;
+}
+
+.server-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.server-checkbox:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.server-checkbox input {
+    display: none;
+}
+
+.checkbox-custom {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.server-checkbox input:checked + .checkbox-custom {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.server-checkbox input:checked + .checkbox-custom::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.server-name {
+    font-size: 13px;
+    color: var(--color-text-primary);
+}
+
+/* Custom Server List */
+.custom-server-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.custom-server-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.custom-server-item.disabled {
+    opacity: 0.5;
+}
+
+.server-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.server-info .server-name {
+    font-weight: 500;
+}
+
+.server-command {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.server-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.toggle-btn,
+.delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toggle-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-muted);
+}
+
+.toggle-btn.active {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+}
+
+.delete-btn {
+    background: rgba(239, 68, 68, 0.1);
+    color: rgba(239, 68, 68, 0.7);
+}
+
+.delete-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+/* Add Server Form */
+.add-server-form {
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+}
+
+.form-row {
+    margin-bottom: 12px;
+}
+
+.form-row label {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-row input,
+.form-row select {
+    width: 100%;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: var(--color-text-primary);
+    font-size: 13px;
+}
+
+.form-row select {
+    cursor: pointer;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.cancel-btn,
+.save-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cancel-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-muted);
+}
+
+.cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.save-btn {
+    background: var(--color-primary);
+    color: white;
+}
+
+.save-btn:hover {
+    filter: brightness(1.1);
+}
+
+/* Add Server Button */
+.add-server-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: var(--color-text-muted);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-server-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* Environment Variables */
+.env-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.env-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+}
+
+.env-key {
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    color: #fbbf24;
+    min-width: 120px;
+}
+
+.env-value {
+    flex: 1;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--color-text-muted);
+    letter-spacing: 2px;
+}
+
+/* Add Env Form */
+.add-env-form {
+    display: flex;
+    gap: 8px;
+}
+
+.add-env-form input {
+    flex: 1;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: var(--color-text-primary);
+    font-size: 12px;
+}
+
+.add-env-form input:first-child {
+    max-width: 150px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.add-env-form input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.add-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    background: var(--color-primary);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-btn:hover:not(:disabled) {
+    filter: brightness(1.1);
+}
+
+.add-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.env-hint {
+    margin-top: 12px;
+    font-size: 11px;
+    color: var(--color-text-muted);
+    opacity: 0.7;
+}

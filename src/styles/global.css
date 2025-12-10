@@ -1,0 +1,407 @@
+/* ====================================================================
+   L.U.N.A. Frontend - Global Styles
+   ==================================================================== */
+
+/* Note: Paperlogy font is loaded in public/index.html via %PUBLIC_URL% */
+
+:root {
+    /* Color Palette - Underwater Deep Sea Theme */
+    --color-bg-primary: #020810;
+    --color-bg-secondary: #051020;
+    --color-bg-tertiary: #0a1828;
+    --color-bg-hover: #102030;
+    --color-bg-active: #152838;
+
+    /* Deep Ocean Colors */
+    --color-deep-ocean: #001020;
+    --color-abyss: #000810;
+    --color-midnight-blue: #0a1525;
+
+    /* Bioluminescent Colors */
+    --color-bioluminescent: #64c8ff;
+    --color-bioluminescent-bright: #8edfff;
+    --color-bioluminescent-dim: #3a9fd4;
+    --color-jellyfish-glow: #7b68ee;
+    --color-coral-pink: #ff6b9d;
+
+    /* Accent Colors */
+    --color-accent-primary: #64c8ff;
+    --color-accent-secondary: #7b68ee;
+    --color-accent-gradient: linear-gradient(135deg, #64c8ff 0%, #7b68ee 100%);
+  
+    /* Text Colors */
+    --color-text-primary: #e8f4ff;
+    --color-text-secondary: #8eb8d8;
+    --color-text-muted: #4a7090;
+
+    /* Status Colors */
+    --color-success: #4cdfb0;
+    --color-warning: #ffb864;
+    --color-error: #ff6b6b;
+    --color-info: #64c8ff;
+  
+    /* Emotion Colors */
+    --color-emotion-joy: #64dfff;
+    --color-emotion-sadness: #4a7090;
+    --color-emotion-anger: #ff6b6b;
+    --color-emotion-surprise: #ff6b9d;
+    --color-emotion-love: #ff6b9d;
+    --color-emotion-neutral: #8eb8d8;
+
+    /* Border */
+    --color-border: rgba(100, 200, 255, 0.1);
+    --color-border-hover: rgba(100, 200, 255, 0.2);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.7);
+    --shadow-glow: 0 0 20px rgba(100, 200, 255, 0.3);
+    --shadow-bioluminescent: 0 0 30px rgba(100, 200, 255, 0.2);
+  
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    /* Typography - Paperlogy Font Family */
+    --font-family: 'Paperlogy', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    
+    /* Font Weights */
+    --font-thin: 100;
+    --font-extralight: 200;
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    --font-black: 900;
+    
+    /* Font Sizes */
+    --font-size-xs: 11px;
+    --font-size-sm: 13px;
+    --font-size-md: 15px;
+    --font-size-lg: 17px;
+    --font-size-xl: 22px;
+    --font-size-2xl: 28px;
+    --font-size-3xl: 36px;
+    --font-size-4xl: 48px;
+    --font-size-5xl: 64px;
+    
+    /* Line Heights */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    --line-height-loose: 2;
+
+    /* Layout */
+    --sidebar-width: 220px;
+    --sidebar-collapsed-width: 56px;
+    --header-height: 60px;
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    --transition-slow: 400ms ease;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-regular);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+    line-height: var(--line-height-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.01em;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-bg-active);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
+}
+
+/* Selection */
+::selection {
+    background: var(--color-accent-primary);
+    color: white;
+}
+
+/* Links */
+a {
+    color: var(--color-accent-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-accent-primary);
+}
+
+/* Buttons */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 2px rgba(100, 200, 255, 0.2);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--color-text-muted);
+}
+
+/* Utility Classes */
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.gap-sm {
+    gap: var(--spacing-sm);
+}
+
+.gap-md {
+    gap: var(--spacing-md);
+}
+
+.gap-lg {
+    gap: var(--spacing-lg);
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-sm {
+    font-size: var(--font-size-sm);
+}
+
+.text-muted {
+    color: var(--color-text-secondary);
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn var(--transition-normal) ease;
+}
+
+.animate-slideUp {
+    animation: slideUp var(--transition-normal) ease;
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-border);
+    border-top-color: var(--color-accent-primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.spinner-lg {
+    width: 40px;
+    height: 40px;
+    border-width: 3px;
+}
+
+/* Badge */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-medium);
+    border-radius: var(--radius-full);
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-secondary);
+}
+
+.badge-success {
+    background: rgba(76, 223, 176, 0.15);
+    color: var(--color-success);
+}
+
+.badge-warning {
+    background: rgba(255, 184, 100, 0.15);
+    color: var(--color-warning);
+}
+
+.badge-error {
+    background: rgba(255, 107, 107, 0.15);
+    color: var(--color-error);
+}
+
+.badge-info {
+    background: rgba(100, 200, 255, 0.15);
+    color: var(--color-info);
+}

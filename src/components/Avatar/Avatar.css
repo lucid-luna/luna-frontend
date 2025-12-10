@@ -1,0 +1,24 @@
+.luna-avatar {
+    display: inline-block;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 18px rgba(6,16,33,0.45);
+    background: linear-gradient(180deg, rgba(100,200,255,0.1), rgba(167,139,250,0.1));
+    border: 2px solid rgba(100,200,255,0.15);
+    flex-shrink: 0;
+}
+
+.luna-avatar img {
+    display: block;
+}
+
+/* small variant */
+.luna-avatar.small {
+    border-radius: 8px;
+}
+
+/* circle helper */
+.luna-avatar.circle {
+    border-radius: 50%;
+}

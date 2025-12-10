@@ -1,0 +1,60 @@
+/* ====================================================================
+   L.U.N.A. Layout Styles
+   ==================================================================== */
+
+.layout {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: var(--color-bg-primary);
+}
+
+.layout-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    transition: margin-left var(--transition-normal);
+}
+
+.sidebar-open .layout-main {
+    margin-left: var(--sidebar-width);
+}
+
+.sidebar-collapsed .layout-main {
+    margin-left: var(--sidebar-collapsed-width);
+}
+
+.layout-content {
+    flex: 1;
+    overflow: auto;
+    padding: var(--spacing-lg);
+    transition: padding-bottom 0.3s ease;
+}
+
+/* When debug panel is open, add padding to content */
+.layout-content.debug-open {
+    padding-bottom: 340px;
+}
+
+/* Page Transition Container */
+.page-transition {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .layout-main {
+        margin-left: 0 !important;
+    }
+    
+    .sidebar-open .sidebar {
+        transform: translateX(0);
+    }
+    
+    .sidebar-collapsed .sidebar {
+        transform: translateX(-100%);
+    }
+}
